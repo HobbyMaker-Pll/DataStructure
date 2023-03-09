@@ -21,8 +21,8 @@ int main()
 	ret = imc(m, h);
 	
 	if (ret < 18.0) printf("Voce esta abaixo do peso");
-	else if (imc<=25) printf("Parabens. Voce esta sarado.");
-	else if (imc>35) printf("cuidado voce esta obeso");
+	else if (ret<=25.0) printf("Parabens. Voce esta sarado.");
+	else if (ret>35.0 ) printf("cuidado voce esta obeso");
 
 
-}
+}	

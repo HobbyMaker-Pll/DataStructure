@@ -13,7 +13,7 @@ int main()
 	
 	for(i=0; i<arrSize; i++)
 	{
-		scanf("%i", &arr[i]);
+		scanf("%i", &*(arr+i));
 	}
 	
 	for(i=0; i<arrSize; i++)

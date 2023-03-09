@@ -16,7 +16,7 @@ int main()
 {
 	point p1, p2;
 	
-	p1.x = 2;
+	p1.x = 5;
 	p2.x = 2;
 	
 	p1.y = 2;

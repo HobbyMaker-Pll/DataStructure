@@ -12,24 +12,28 @@ void printEmployees(employee* data, int size)
 {
 	for(int i=0; i<size; i++)
 	{
-		printf("=-=-=-=-=-=-=-=-=-");
+		printf("=-=-=-=-=-=-=-=-=-\n");
 		printf(
-			"ID: %i\n Salary: %.2f\n Age: %i\n Gender: %c",
-			employee[i].id,
-			employee[i].salary,
-			employee[i].age,
-			employee[i].gender,
-		)
+			"ID: %i\nSalary: %.2f\nAge: %i\nGender: %c\n",
+			data[i].id,
+			data[i].salary,
+			data[i].age,
+			data[i].gender
+		);
 	}
 }
 
 void registerEmployee(int id, employee* ret)
 {
-	printf("Insert salary: ");
-	scanf("%f", ret)
-	printf("Insert age: ");
-	printf("Inser gender: ");
-	
+	ret->id = id;
+	printf("Insert salary: \n");
+	scanf("%f", &(ret->salary));
+	printf("Insert age: \n");
+	scanf("%i", &(ret->age));
+	printf("Inser gender: \n");
+	fflush(stdin);
+	scanf("%c", &(ret->gender));
+	system("cls");
 }
 
 int main()
@@ -39,9 +43,10 @@ int main()
 	
 	printf("Insert the number of employees: ");
 	scanf("%i", &size);
+
+	employees = (employee*) malloc(sizeof(employee)*size);
 	
-	for(i=0; i<size; i++)
-	{
-		
-	}
+	for(i=0; i<size; i++) registerEmployee(i, &*(employees+i));
+
+	printEmployees(employees, size);
 }
